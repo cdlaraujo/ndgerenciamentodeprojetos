@@ -1,0 +1,182 @@
+/* O asterisco "*" é seletor universal de todos os elementos desta folha.
+Ou seja, todos os elementos selecionados por ele terão a mesma propriedade */
+
+*{
+    /* distância entre o elemento e o canto da tela */
+    margin: 0;
+    /* borda de um elemento */
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+    font-family: 'Raleway' !important;
+}
+
+body {
+    background-color: #ffffff;
+}
+
+section, footer {
+    /* 54 pixels para cima e para baixo, 0 pixels para a direita e esquerda */
+    padding: 54px 0;
+}
+
+h3{
+    font-size: 50px;
+    color:#d1d1d1;
+}
+
+h2{
+    color:#d1d1d1;
+    font-size: 50px;
+}
+
+h1{
+    color:#d1d1d1;
+    font-size: 80px;
+}
+
+p{
+    color: #d1d1d1;
+}
+
+.container{
+    /* a largura não vai passar de 1400 pixels */
+    max-width: 1800px;
+    /* O mesmo espaçamento na direita será o da esquerda */
+    margin: 0 auto;
+    /* ? */
+    padding: 0 3%;
+    min-height: max-content;
+    height: 956px;
+}
+
+.btn{
+    background-color: #3270bb;
+    color:white;
+    padding: 15px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    display: inline-block;
+    animation: animate-outline 1.5s ease-in-out infinite;
+}
+
+.btn:hover{
+    background-color: #0065e0;
+    color:#929292;
+}
+
+@keyframes animate-outline {
+    from{
+        outiline: 0px solid #0065e0;
+    }
+    to{
+        outline: 15px solid #4f9bf900;
+    }
+}
+
+.header{
+    /* A imagem fica no centro */
+    background-position: center;
+    /* A imagem ocupa toda a largura e altura disponível */
+    background-size: fill;
+    /* Efeito paralex */
+    background-attachment: fixed;
+}
+
+nav{
+    /* Coloca os elementos do site um do lado do outro */
+    display: flex;
+    /* Alinhar os elementos no eixo y */
+    align-items: center;
+    /* Todos os elementos terão o mesmo espaço */
+    justify-content: space-between;
+    padding-top: 0px;
+}
+
+nav ul{
+    display: flex;
+    align-items: center;
+}
+
+nav ul a{
+    color: white;
+    margin: 0 30px;
+    text-transform: uppercase;
+    font-size: 17px;
+    display: block;
+}
+
+nav ul a:not(.btn):after{
+    content: "";
+    background-color: #006aeb;
+    height: 3px;
+    width: 0%;
+    display: block;
+    margin: 0 auto;
+    transition: 0.4s;
+}
+
+nav ul a:hover::after{
+    width: 100%;
+}
+
+.menu-icon{
+    cursor: pointer;
+    padding: 2%;
+    margin: 1%;
+    font-size: 25px;
+    color: #161616;
+    display: none;
+    border: 3px solid #161616;
+    border-radius: 100%;
+    background-color: #0d6adb;
+}
+
+.banner-text{
+    color: #ffffffb7;
+    margin: 5% 5%;
+    text-align: center;
+    padding: 5% 5%;
+}
+
+.banner-text h1{
+    font-size: 76px;
+}
+
+.banner-text p{
+    font-size: 20px;
+    padding-top: 5px;
+}
+
+.clientes{
+    display: flex;
+    justify-content: center;
+}
+
+.footer{
+    background-color:#0065e0;
+    text-align: center;
+    font-size: 20px;
+}
+
+.container-footer p{
+    padding: 5px;
+}
+
+@media screen and (max-width: 1020px) {
+
+    nav .menu-icon{
+        display: block;
+    }
+
+    /* Cabeçalho */
+    .container nav ul{
+        display: none;
+    }
+    
+    .cards .card-item:nth-child(1),
+    .cards .card-item:nth-child(3) {
+        display: none;
+    }
+}

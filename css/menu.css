@@ -1,0 +1,88 @@
+*{
+    /* distância entre o elemento e o canto da tela */
+    margin: 0;
+    /* borda de um elemento */
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+    font-weight:500;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    background-color: #0063dd;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn{
+    background-color: #ffffff;
+    color:rgb(17, 17, 17);
+    padding: 15px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    display: inline-block;
+    animation: animate-outline 1.5s ease-in-out infinite;
+}
+
+.btn:hover{
+    background-color: #e1efff;
+}
+
+@keyframes animate-outline {
+    from{
+        outiline: 0px solid #0063dd;
+    }
+    to{
+        outline: 15px solid #4f9bf900;
+    }
+}
+
+nav ul {
+    display: flex;
+    flex-direction: column;
+    text-align: center; /* Aligns the items in the center */
+}
+
+nav ul a {
+    display: block;
+    margin: 30px 0; /* Adjusts the vertical spacing between the links */
+    text-align: center; /* Centers the text */
+    font-size: 20px;
+    color: white;
+}
+
+nav ul a:not(.btn):after{
+    content: "";
+    background-color: #ffffff;
+    height: 3px;
+    width: 0%;
+    display: block;
+    margin: 0 auto;
+    transition: 0.4s;
+    display: inline-block;
+}
+
+nav ul a:hover::after{
+    width: 100%;
+}
+
+@media (max-width: 600px) {
+    nav ul {
+        flex-direction: column;
+        justify-content: center; /* Centers the items vertically */
+        align-items: center; /* Centers the items horizontally */
+    }
+
+    nav ul a {
+        text-align: center;
+        padding: 10px 0;
+    }
+}
+
+
